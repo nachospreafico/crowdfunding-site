@@ -61,7 +61,7 @@ const Header = () => {
           <img
             src={bgDesktop}
             alt="hero image for mobiles"
-            className="absolute object-cover z-[-1] top-0 left-0"
+            className="absolute object-cover w-screen z-[-1] top-0 left-0"
           ></img>
           <img src={Logo} alt="logo" className=""></img>
           <nav className="flex flex-row gap-6 justify-center items-center">

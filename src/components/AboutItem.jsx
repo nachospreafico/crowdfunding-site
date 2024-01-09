@@ -7,7 +7,7 @@ const AboutItem = ({ name, pledge, text, left }) => {
     >
       <h2 className="font-bold">{name}</h2>
       <p className="font-medium text-[#3CB4AB]">Pledge ${pledge} or more</p>
-      <p className="text-gray-500 text-sm">{text}</p>
+      <p className="text-gray-500 text-sm leading-6">{text}</p>
       <div className="flex flex-col w-full gap-4 md:flex-row md:justify-between md:items-center">
         <p className="text-gray-500 text-sm">
           <span className="text-2xl font-bold text-black">{left}</span> left
