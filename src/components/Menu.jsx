@@ -5,7 +5,7 @@ const Menu = ({ nav }) => {
     <nav
       className={`${
         nav ? "fixed" : "hidden"
-      } w-max-[350px] w-[90%]  z-10 flex flex-col justify-center items-start bg-white rounded-lg top-16 right-6`}
+      } w-[350px]   z-10 flex flex-col justify-center items-start bg-white rounded-lg top-16 left-[50%] translate-x-[-50%]`}
     >
       <a className="text-black w-full font-medium text-md border-b-[1px] p-4">
         About

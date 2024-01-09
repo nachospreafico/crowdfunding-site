@@ -5,8 +5,10 @@ const AboutItem = ({ name, pledge, text, left }) => {
         left === 0 && "opacity-50"
       }`}
     >
-      <h2 className="font-bold">{name}</h2>
-      <p className="font-medium text-[#3CB4AB]">Pledge ${pledge} or more</p>
+      <div className="flex flex-col gap-4 md:flex-row  w-full justify-between">
+        <h2 className="font-bold">{name}</h2>
+        <p className="font-medium text-[#3CB4AB]">Pledge ${pledge} or more</p>
+      </div>
       <p className="text-gray-500 text-sm leading-6">{text}</p>
       <div className="flex flex-col w-full gap-4 md:flex-row md:justify-between md:items-center">
         <p className="text-gray-500 text-sm">
