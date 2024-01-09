@@ -6,7 +6,7 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectHead = ({ setModal }) => {
   const [isSmall, setIsSmall] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
+  const [bookmark, setBookmark] = useState(false);
 
   useEffect(() => {
     const handleWindowSizeChange = () => {
@@ -43,21 +43,44 @@ const ProjectHead = ({ setModal }) => {
           Back this project
         </button>
         {isSmall ? (
-          <div className="flex justify-center items-center w-[50px] h-auto  bg-[#2F2F2F] rounded-full">
-            <FontAwesomeIcon icon={faBookmark} className="text-gray-400" />
+          <div
+            onClick={() => setBookmark(!bookmark)}
+            className={`flex justify-center items-center w-[50px] h-auto ${
+              bookmark ? "bg-[#3CB4AB]" : "bg-[#2F2F2F]"
+            }  rounded-full duration-200`}
+          >
+            <FontAwesomeIcon
+              icon={faBookmark}
+              className={`${bookmark ? "text-white" : "text-gray-400"}`}
+            />
           </div>
         ) : (
-          <div className="flex cursor-pointer  flex-row items-center gap-2 bg-gray-200 rounded-full pr-3 group duration-200 lg:hover:bg-[#F4F4F4] lg:hover:shadow-lg">
+          <div
+            onClick={() => setBookmark(!bookmark)}
+            className={`flex cursor-pointer  flex-row items-center gap-2 bg-gray-200 rounded-full pr-3 group duration-200 lg:hover:bg-[#F4F4F4] lg:hover:shadow-lg`}
+          >
             <div
-              className={`flex justify-center h-full items-center w-[50px] lg:group-hover:bg-[#707070] duration-200 bg-[#2F2F2F]  rounded-full`}
+              className={`flex justify-center h-full items-center w-[50px]  ${
+                bookmark ? "bg-[#3CB4AB]" : "lg:group-hover:bg-[#707070]"
+              } duration-200 bg-[#2F2F2F]  rounded-full`}
             >
               <FontAwesomeIcon
                 icon={faBookmark}
-                className="text-gray-400 lg:group-hover:text-gray-200 duration-200"
+                className={` ${
+                  bookmark
+                    ? "text-white"
+                    : "text-gray-400 lg:group-hover:text-gray-200"
+                }  duration-200`}
               />
             </div>
-            <p className="font-bold text-[#2F2F2F] lg:group-hover:text-[#707070] duration-200">
-              Bookmark
+            <p
+              className={`font-bold  ${
+                bookmark
+                  ? "text-[#3CB4AB] lg:group-hover:text-[#3CB4AB]"
+                  : "text-[#2F2F2F] lg:group-hover:text-[#707070]"
+              }  duration-200 `}
+            >
+              {bookmark ? "Bookmarked" : "Bookmark"}
             </p>
           </div>
         )}
